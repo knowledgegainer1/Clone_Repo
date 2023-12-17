@@ -1,12 +1,16 @@
 #!bin/bash
 
 #installing mysql pkg by script
- id=$(id -un)
+ id=$(id -u)
 
-if [ $id -eq 0 ]; 
+if [ $id -eq 0 ] ; 
 then
- echo "HELLO $(id -un)"
+ echo "HELLO $(id -un) user"
+ yum install mysql -y
+ if [ $? -eq 0] ;
+ then 
+ echo "$?"
 else 
-echo "Hello Normal user $id"
+echo "to this activity You should be a root user"
 fi
 
