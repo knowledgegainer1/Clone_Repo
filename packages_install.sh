@@ -3,5 +3,8 @@
 #installing mysql pkg by script
  id=$(id -u)
 
-echo "$id"
+if [ $id -eq 0]; 
+then
+ echo "HELLO $(id -un)"
+fi
 
